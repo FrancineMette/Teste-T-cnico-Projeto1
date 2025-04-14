@@ -110,5 +110,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+ 
+  const scrollRightButton2 = document.getElementById('scroll-right2');
+  const scrollLeftButton2 = document.getElementById('scroll-left2');
+  const container2 = document.querySelector('.produtos2');
+
+  if (scrollRightButton2 && container2) {
+    
+    scrollRightButton2.addEventListener('click', () => {
+      container2.scrollBy({
+        left: 300,  
+        behavior: 'smooth' 
+      });
+    });
+  }
+
+  if (scrollLeftButton2 && container2) {
+   
+    scrollLeftButton2.addEventListener('click', () => {
+      container2.scrollBy({
+        left: -300, 
+        behavior: 'smooth' 
+      });
+    });
+  }
+});
+
 
 
