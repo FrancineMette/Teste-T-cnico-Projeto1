@@ -1,0 +1,25 @@
+<nav class="menu">
+            <button onclick="toggleMenu()">☰ Todas as Categorias</button>
+            
+            <div id="megaMenu" class="hidden">
+               <div class="coluna">
+                  <h4>Departamento</h4>
+                  <p>Categoria</p>
+                  <p>Categoria</p>
+                  <p>Categoria</p>
+               </div>
+               
+               <div class="coluna">
+                  <h4>Departamento</h4>
+                  <p>Categoria</p>
+                  <p>Categoria</p>
+                  <p>Categoria</p>
+               </div>
+               
+               <div class="imagem-destaque">
+                  <img src="assets/caneca2.svg" alt="Produtos novos" />
+                  <p>Confira os Produtos que acabaram de chegar</p>
+                  <button>VER TODOS</button>
+               </div>
+            </div>
+         </nav>

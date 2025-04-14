@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mega Menu com Clique</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background: #f0f0f0;
+      padding: 16px;
+    }
+
+    .menu-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .menu-toggle {
+      background: #0056ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .mega-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      width: 100vw;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      padding: 20px;
+      z-index: 1000;
+      display: none;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .mega-menu.active {
+      display: flex;
+    }
+
+    .coluna {
+      flex: 1;
+    }
+
+    .coluna h4 {
+      margin-bottom: 10px;
+      color: #0056FF;
+    }
+
+    .coluna p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .imagem-destaque {
+      flex: 1;
+      background-color: #555;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .imagem-destaque p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="menu-wrapper">
+      <button class="menu-toggle">☰ Todas as Categorias</button>
+
+      <div class="mega-menu" id="megaMenu">
+        <div class="coluna">
+          <h4>Departamento</h4>
+          <p>Categoria 1</p>
+          <p>Categoria 2</p>
+          <p>Categoria 3</p>
+        </div>
+        <div class="coluna">
+          <h4>Departamento</h4>
+          <p>Categoria A</p>
+          <p>Categoria B</p>
+          <p>Categoria C</p>
+        </div>
+        <div class="imagem-destaque">
+          <p>Confira os <br>Produtos que<br> acabaram de chegar</p>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const megaMenu = document.getElementById('megaMenu');
+
+    toggleButton.addEventListener('click', () => {
+      megaMenu.classList.toggle('active');
+    });
+
+    // Fecha o menu ao clicar fora
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu-wrapper')) {
+        megaMenu.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+</html>
